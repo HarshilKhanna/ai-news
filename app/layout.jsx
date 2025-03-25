@@ -1,9 +1,9 @@
 import "./globals.css"
 
 export const metadata = {
-  title: "NewsDigest - Personalized News Summarizer",
+  title: "Newsify - Personalized News Summarizer",
   description: "Stay updated with the latest news tailored to your interests",
-    generator: 'v0.dev'
+    generator: 'Harshil Khanna'
 }
 
 export default function RootLayout({ children }) {

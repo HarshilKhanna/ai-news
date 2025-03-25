@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import ThemeToggle from "./ThemeToggle"
-import { Search, X } from "lucide-react"
+import { Search, X, Newspaper } from "lucide-react"
 
 export default function Header({ onSearch, categories, selectedCategory, onCategoryChange }) {
   const [searchTerm, setSearchTerm] = useState("")
@@ -30,15 +30,16 @@ export default function Header({ onSearch, categories, selectedCategory, onCateg
 
   return (
     <header
-      className={`sticky top-0 z-10 bg-white dark:bg-gray-900 transition-all duration-300 ${
+      className={`sticky top-0 z-10 bg-white dark:bg-black transition-all duration-300 ${
         isScrolled ? "shadow-md" : ""
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary">NewsDigest</h1>
+          <div className="flex items-center space-x-2">
+            <Newspaper className="h-8 w-8 text-primary" />
+            <h1 className="text-2xl font-bold text-primary">Newsify</h1>
           </div>
 
           {/* Middle section with category dropdown on mobile */}
@@ -50,7 +51,7 @@ export default function Header({ onSearch, categories, selectedCategory, onCateg
               <input
                 type="text"
                 placeholder="Search news..."
-                className="w-full py-2 pl-10 pr-10 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full py-2 pl-10 pr-10 rounded-full border border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
@@ -68,7 +69,7 @@ export default function Header({ onSearch, categories, selectedCategory, onCateg
               <select
                 value={selectedCategory}
                 onChange={(e) => onCategoryChange(e.target.value)}
-                className="appearance-none bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg py-2 px-4 pr-8 focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 {categories.map((category) => (
                   <option key={category} value={category}>
@@ -95,7 +96,7 @@ export default function Header({ onSearch, categories, selectedCategory, onCateg
             <input
               type="text"
               placeholder="Search news..."
-              className="w-full py-2 pl-10 pr-10 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full py-2 pl-10 pr-10 rounded-full border border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
               value={searchTerm}
               onChange={handleSearchChange}
             />

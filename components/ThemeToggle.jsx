@@ -41,29 +41,22 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative inline-flex items-center justify-center w-12 h-6 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
+      className="relative inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300 focus:outline-none"
       aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
       <span className="sr-only">{isDarkMode ? "Switch to light mode" : "Switch to dark mode"}</span>
 
       {/* Sun icon */}
       <Sun
-        className={`absolute left-1 h-4 w-4 text-yellow-500 transition-opacity duration-300 ${
+        className={`h-5 w-5 text-yellow-500 transition-opacity duration-300 ${
           isDarkMode ? "opacity-0" : "opacity-100"
         }`}
       />
 
       {/* Moon icon */}
       <Moon
-        className={`absolute right-1 h-4 w-4 text-blue-300 transition-opacity duration-300 ${
+        className={`absolute h-5 w-5 text-blue-300 transition-opacity duration-300 ${
           isDarkMode ? "opacity-100" : "opacity-0"
-        }`}
-      />
-
-      {/* Toggle knob */}
-      <span
-        className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
-          isDarkMode ? "translate-x-6" : "translate-x-1"
         }`}
       />
     </button>
