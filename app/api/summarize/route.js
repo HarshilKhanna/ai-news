@@ -61,7 +61,9 @@ export async function POST(request) {
     // Generate summary using Gemini
     console.log('Generating summary with Gemini');
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+      const model = genAI.getGenerativeModel({
+  model: "gemini-3-flash-preview"
+});
       
       const prompt = `Analyze this article and provide a STRONG, CONCISE summary with these requirements:
 
